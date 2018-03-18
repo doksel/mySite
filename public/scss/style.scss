@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Marck+Script|Noto+Sans:400,700&subset=cyrillic');
+// font-family: 'Marck Script', cursive; ru
+// font-family: 'Noto Sans', sans-serif; ru
+// font-family: 'Gloria Hallelujah', cursive; en
+$color_link: rgb(18, 11, 110);
+$main_font_family: 'Noto Sans', sans-serif;
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/background_body.jpg);
+    background-size: cover;
+    font-family: $main_font_family;
+    font-weight: 700;
+}
+.wraper{
+    width: 80%;
+    height: 2000px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 100px 50px 1fr 50px;
+    grid-template-columns: 1fr 250px;
+    grid-template-areas: "header header"
+                        "nav nav"
+                        "main aside"
+                        "footer footer"
+}
+header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .logo__icon{
+            text-align: center;
+            color: $color_link;
+        }
+        .logo__name{
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 40px;
+            text-align: center;
+            color: $color_link;
+        }
+    }
+    .registration{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .registration__login {
+        }
+        .registration__register{
+        }
+        a{
+            text-shadow: 2px 2px 4px white;
+        }
+    }
+}
+a{
+    color: $color_link;
+    text-decoration: none;
+    margin: 0 15px; 
+    text-shadow: 1px 1px 2px white;
+
+}
+nav{
+    grid-area: nav;
+    background-color: wheat;
+    // display: flex;
+    // justify-content: space-around;
+    align-items: center;
+    ul{
+        display: flex;
+        justify-content: space-around;
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+        ul{
+            display: none;
+        }
+        &:hover ul{
+            display: block;
+        }
+    }
+
+}
+
+main{
+    grid-area: main;
+    background-color: rgb(49, 177, 81);
+}
+aside{
+    grid-area: aside;
+    background-color: rgb(132, 106, 173);
+}
+footer{
+    grid-area: footer;
+    background-color: rgb(197, 168, 113);
+}
